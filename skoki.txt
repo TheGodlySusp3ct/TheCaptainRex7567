@@ -1,0 +1,36 @@
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int main()
+{
+    int liczba;
+    int suma = 0;
+    list<int> lista1; 
+    cout << "Podaj kolejne liczby podzielne przez 3: " << endl;
+    cout << "W celu zatrzymania programu, wpisz 0" << endl;
+    cin >> liczba;
+    while (liczba != 0) {
+        if (liczba > 0) {
+            if (liczba % 3 == 0) {
+                lista1.push_back(liczba);
+                suma += liczba;
+            }
+        }
+        if (liczba < 0)
+            cout << "Prosze podawaj tylko liczby naturalne!" << endl;
+        cin >> liczba;
+    }
+    cout << "Liczby podzielne przez 3 to: ";
+//    for (list<int>::iterator i=lista1.begin(); i!=lista1.end(); i++)
+//       cout << *i << " ";
+    for (int i: lista1) {
+        cout << i << " ";
+    }
+
+    cout << "\nSuma tych liczb wynosi: " << suma;
+
+    return 0;
+
+}
